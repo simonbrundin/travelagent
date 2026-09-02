@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - src/nuxt/**
+      - .github/workflows/**
       - Dockerfile
   workflow_dispatch:
 
