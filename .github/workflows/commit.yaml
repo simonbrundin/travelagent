@@ -4,10 +4,8 @@ on:
     branches:
       - main
     paths:
-      - src/**
+      - src/nuxt/**
       - Dockerfile
-      - nuxt.config.ts
-      - package.json
   workflow_dispatch:
 
 env:
@@ -47,7 +45,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: src/nuxt
+          file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
