@@ -17,7 +17,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: travelagent-app
-          image: |
+          image: >
             ghcr.io/simonbrundin/travelagent@sha256:c7250d0541fdab17ed8eba630d736fe2582a611e
           ports:
             - containerPort: 3000
