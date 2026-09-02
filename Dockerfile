@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apk add --no-cache python3 make g++ gcc
 
 # Kopiera package files
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 # Installera node_modules
 RUN npm ci
