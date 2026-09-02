@@ -27,6 +27,12 @@ npm run dev
 
 Öppna <http://localhost:3000>
 
+## Produktion
+
+Distribuerad via Flux GitOps till Kubernetes.
+
+- **URL**: <https://travelagent.simonbrundin.com>
+
 ## Tech Stack
 
 - Nuxt 4
