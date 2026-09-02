@@ -43,3 +43,14 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "250m"
+          env:
+            - name: NUXT_PUBLIC_AERODATABOX_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: travelagent-api-keys
+                  key: AERODATABOX_API_KEY
+            - name: IGNV_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: travelagent-api-keys
+                  key: IGNV_API_KEY
