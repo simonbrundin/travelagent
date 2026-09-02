@@ -87,8 +87,10 @@ jobs:
         env:
           IMAGE: ${{ needs.build-publish-image.outputs.image }}
         run: |
-          echo "Updating image to: $IMAGE"
-          yq -i '.spec.template.spec.containers[0].image = strenv(IMAGE)' \
+          IMAGE_TRIMMED=$(echo "$IMAGE" | tr -d '\n ')
+          echo "Updating image to: $IMAGE_TRIMMED"
+          yq -i \
+            '.spec.template.spec.containers[0].image = strenv(IMAGE_TRIMMED)' \
             environments/prod/deployment.yaml
 
       - name: Push changes
