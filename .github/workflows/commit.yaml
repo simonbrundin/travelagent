@@ -60,7 +60,7 @@ jobs:
 
     outputs:
       image: |
-        ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@sha256:${{ github.sha }}
+        ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
       tags: |
         ${{ steps.meta.outputs.tags }}
 
